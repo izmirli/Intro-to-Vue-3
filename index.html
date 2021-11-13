@@ -30,9 +30,10 @@
               :style="{ color: variant.color, cursor: 'pointer' }" 
               v-on:click="image = './assets/images/socks_' + variant.color + '.jpg'">{{ variant.color }}</div>
             </div>
-            <b>Sizes:</b>
-            <div style="margin: 5px;">
-              <div v-for="size in sizes">{{ size }}</div>
+            <div><b>Sizes:</b>
+              <ul>
+                <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+              </ul>
             </div>
           </div>
         </div>
