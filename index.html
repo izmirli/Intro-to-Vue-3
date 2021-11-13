@@ -18,7 +18,11 @@
             <img v-bind:src="image">
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ product }} <span v-show="inStock">&#128077;</span></h1>
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory && inventory <= 10">Allmost gone...</p>
+            <p v-else>Out of Stock</p>
+            <p v-show="onSale">On Sale 🎁</p>
           </div>
         </div>
       </div>
